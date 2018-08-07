@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Not Hotdog</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="static/css/style.css"/>
+        <script type="text/javascript" src="static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/nothotdog.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+    <body>
+    <div class="image-container set-full-height" style="background-image: url('{{ url_for('static', filename='img/background.jpg')}}')">
+        <div class="white-box">
+            <header>
+                <div class="head-wrap">
+                    <h1>🌭 Hotdog or Not Hotdog? 🌭</h1>
+                </div>
+            </header>
+            <div class="container">
+                <form method="post" enctype="multipart/form-data" action="upload">
+                    <input class="btn btn-warning" id="img" name="file" type="file" accept=".jpeg,.jpg,.png"/>
+                    <input class="btn btn-danger" type="submit" value="Check Hotdog"/>
+                </form>
+                <div class="info-area">
+                    <div class="img-area"></div>
+                    <div class="status-area">
+                        <span class="status"></span>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
