@@ -5,6 +5,7 @@ import random
 from flask import Flask
 from flask import jsonify
 from flask import request, url_for, render_template
+from flask_basicauth import BasicAuth
 import predict
 import boto3
 import botocore
@@ -15,13 +16,18 @@ KEY = 'checkpoint.pth'
 tmp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 
 app = Flask(__name__, template_folder=tmp_dir)
+app.config['BASIC_AUTH_USERNAME'] = 'peterton'
+app.config['BASIC_AUTH_PASSWORD'] = 'elumitas'
+app.config['BASIC_AUTH_FORCE'] = True
 app.config['UPLOAD_FOLDER'] = 'static/img'
+
+basic_auth = BasicAuth(app)
 
 valid_mimetypes = ['image/jpeg', 'image/png']
 
 # Code for downloading model from S3 only needs to be executed once when hosted on Paperspace
 # Comment this section out after code has been run once
-
+"""
 s3 = boto3.resource('s3')
 
 try:
@@ -31,7 +37,7 @@ except botocore.exceptions.ClientError as e:
         print("The object does not exist.")
     else:
         raise
-
+"""
 
 """
 Index view
@@ -71,9 +77,13 @@ def is_hot_dog():
         is_hot_dog = 'false' if classes[0] == 'not hotdog' else 'true'
         return_packet = {
             'is_hot_dog': is_hot_dog,
-            'confidence': confidence
+            'confidence': confidence,
         }
         return jsonify(return_packet)
         
+@app.route('/loaderio-7d1f895bdd69f404086cd5ef916e8e57.txt')
+def verification_token():
+    return 'loaderio-7d1f895bdd69f404086cd5ef916e8e57'
+        
 if __name__ == "__main__":
-	app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
