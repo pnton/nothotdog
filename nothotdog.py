@@ -16,6 +16,7 @@ KEY = 'checkpoint.pth'
 tmp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 
 app = Flask(__name__, template_folder=tmp_dir)
+
 app.config['BASIC_AUTH_USERNAME'] = 'peterton'
 app.config['BASIC_AUTH_PASSWORD'] = 'elumitas'
 app.config['BASIC_AUTH_FORCE'] = True

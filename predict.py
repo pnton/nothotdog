@@ -36,8 +36,6 @@ def main(input):
 def load_checkpoint(filepath, device):
     # Loads a checkpoint and rebuilds the model
 
-    # Checkpoint code from http://github.com/udacity/DL_PyTorch used as a reference
-
     checkpoint = torch.load(filepath)
     
     model = models.vgg19(pretrained=True)
@@ -74,8 +72,6 @@ def process_image(image):
     ''' Scales, crops, and normalizes a PIL image for a PyTorch model,
         returns a Numpy array
     '''
-    
-    # Image preprocessing code from instructor Mat Leonard on AIPND Slack used as a reference
     
     # Process a PIL image for use in a PyTorch model
     image = Image.open(image).convert('RGB')

@@ -55,8 +55,6 @@ def get_input_args():
      parse_args() -data structure that stores the command line arguments object  
     """
     
-    # get_input_args code from Lab:Classifying Images used as a reference
-    
     # Creates parse 
     parser = argparse.ArgumentParser()
 
@@ -81,8 +79,6 @@ def get_input_args():
 
 def load_data(train_dir, valid_dir, test_dir):
     # Build and train network
-
-    # Network code from http://github.com/udacity/DL_PyTorch used as a reference
     
     train_transforms = transforms.Compose([transforms.RandomRotation(30),
                                            transforms.RandomResizedCrop(224),
@@ -117,8 +113,6 @@ def load_data(train_dir, valid_dir, test_dir):
 def build_network(model, hidden_units):
     # Build and train network
 
-    # Network code from http://github.com/udacity/DL_PyTorch used as a reference
-
     # Freeze parameters so we don't backprop through them
     for param in model.parameters():
         param.requires_grad = False
@@ -143,7 +137,6 @@ def build_network(model, hidden_units):
     return classifier
 
 def validation(model, loader, criterion):
-    # Validation code from http://github.com/udacity/DL_PyTorch used as a reference
     
     valid_loss = 0
     accuracy = 0
@@ -162,7 +155,6 @@ def validation(model, loader, criterion):
     return valid_loss, accuracy
 
 def do_deep_learning(model, trainloader, validloader, epochs, criterion, optimizer, device):
-    # Training code from http://github.com/udacity/DL_PyTorch used as a reference
 
     print_every = 40
     steps = 0
@@ -207,7 +199,6 @@ def do_deep_learning(model, trainloader, validloader, epochs, criterion, optimiz
                 model.train()
                 
 def check_accuracy_on_test(testloader, model, device):
-    # Testing code from http://github.com/udacity/DL_PyTorch used as a reference
 
     correct = 0
     total = 0
@@ -225,8 +216,6 @@ def check_accuracy_on_test(testloader, model, device):
     
 def save_checkpoint(hidden_size, model, train_data):
     # Save the checkpoint
-
-    # Checkpoint code from http://github.com/udacity/DL_PyTorch used as a reference
 
     checkpoint = {'input_size': 25088,
                   'output_size': 2,
