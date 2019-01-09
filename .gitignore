@@ -100,15 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-# testing module
-dog.py
-
 # S3 info
 config
 credentials
-
-# load test shell script
-load-test.sh
-
-# verification token
-loaderio-7d1f895bdd69f404086cd5ef916e8e57.txt
