@@ -5,7 +5,6 @@ import random
 from flask import Flask
 from flask import jsonify
 from flask import request, url_for, render_template
-from flask_basicauth import BasicAuth
 import predict
 import boto3
 import botocore
@@ -17,12 +16,7 @@ tmp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 
 app = Flask(__name__, template_folder=tmp_dir)
 
-app.config['BASIC_AUTH_USERNAME'] = 'peterton'
-app.config['BASIC_AUTH_PASSWORD'] = 'elumitas'
-app.config['BASIC_AUTH_FORCE'] = True
 app.config['UPLOAD_FOLDER'] = 'static/img'
-
-basic_auth = BasicAuth(app)
 
 valid_mimetypes = ['image/jpeg', 'image/png']
 
@@ -81,10 +75,6 @@ def is_hot_dog():
             'confidence': confidence,
         }
         return jsonify(return_packet)
-        
-@app.route('/loaderio-7d1f895bdd69f404086cd5ef916e8e57.txt')
-def verification_token():
-    return 'loaderio-7d1f895bdd69f404086cd5ef916e8e57'
         
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
