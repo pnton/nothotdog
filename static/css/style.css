@@ -52,11 +52,7 @@ input[type="submit"] {
 }
 
 .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -275px;
-    margin-left: -590px;
+    width: inherit !important;
 }
 
 .status-area {
