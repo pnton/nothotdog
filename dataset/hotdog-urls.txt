@@ -1,3 +1,0 @@
-http://image-net.org/api/text/imagenet.synset.geturls?wnid=n07690019
-http://image-net.org/api/text/imagenet.synset.geturls?wnid=n07865105
-http://image-net.org/api/text/imagenet.synset.geturls?wnid=n07697537
