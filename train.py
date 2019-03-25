@@ -20,7 +20,7 @@ def main():
     valid_dir = data_dir + '/valid'
     test_dir = data_dir + '/test'
     
-    train_data, valid_data, test_data, trainloader, validloader, testloader, device = load_data(train_dir, valid_dir, test_dir, in_arg.gpu)
+    train_data, valid_data, test_data, trainloader, validloader, testloader, device = load_data(train_dir, valid_dir, test_dir)
     
     with open('cat_to_name.json', 'r') as f:
         cat_to_name = json.load(f)
