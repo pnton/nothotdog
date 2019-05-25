@@ -2,7 +2,7 @@
   "project": "nothotdog",
   "machineType": "P4000",
   "container": "pytorch/pytorch:0.4_cuda9_cudnn7",
-  "lastJobId": "jlit145vj5qou",
-  "command": "cGlwIGluc3RhbGwgLVUgcGlwICYmIHBpcCBpbnN0YWxsIC1yIHJlcXVpcmVtZW50cy50eHQgJiYgZXhwb3J0IEFXU19DT05GSUdfRklMRT1jb25maWcgJiYgZXhwb3J0IEFXU19TSEFSRURfQ1JFREVOVElBTFNfRklMRT1jcmVkZW50aWFscyAmJiBweXRob24gbm90aG90ZG9nLnB5",
-  "workspace": "/mnt/c/Users/ptrto/Documents/nothotdog"
+  "lastJobId": "jsm4jqvvnzme97",
+  "command": "pip install -U pip && pip install -r requirements.txt && export AWS_CONFIG_FILE=config && export AWS_SHARED_CREDENTIALS_FILE=credentials && python nothotdog.py",
+  "workspace": "/mnt/c/Users/Peter/Documents/nothotdog"
 }
