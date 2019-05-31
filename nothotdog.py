@@ -22,7 +22,7 @@ valid_mimetypes = ['image/jpeg', 'image/png']
 
 # Code for downloading model from S3 only needs to be executed once when hosted on Paperspace
 # Comment this section out after code has been run once
-"""
+
 s3 = boto3.resource('s3')
 
 try:
@@ -32,7 +32,7 @@ except botocore.exceptions.ClientError as e:
         print("The object does not exist.")
     else:
         raise
-"""
+
 
 """
 Index view
