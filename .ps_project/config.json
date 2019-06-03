@@ -3,6 +3,6 @@
   "machineType": "P4000",
   "container": "pytorch/pytorch:0.4_cuda9_cudnn7",
   "lastJobId": "jovadmek12p6t",
-  "command": "rm -r /storage/* && pip install -U pip && pip install -r requirements.txt && export AWS_CONFIG_FILE=config && export AWS_SHARED_CREDENTIALS_FILE=credentials && python nothotdog.py",
+  "command": "pip",
   "workspace": "/mnt/c/Users/Peter/Documents/nothotdog"
 }
